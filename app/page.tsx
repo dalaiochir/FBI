@@ -9,7 +9,7 @@ type Charge = {
 };
 
 const targetName = process.env.NEXT_PUBLIC_TARGET_NAME?.trim() || 'Most Wanted Cutie';
-const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD?.trim() || '247';
+const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD?.trim() || '2:47';
 const audioFile = process.env.NEXT_PUBLIC_AUDIO_FILE?.trim() || '/Bruno Mars-Treasure.mp3';
 
 const charges: Charge[] = [
