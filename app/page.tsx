@@ -186,7 +186,7 @@ export default function HomePage() {
             </div>
 
             <p className="mt-5 text-xs leading-6 text-white/40">
-              Tip: set your own password in <code className="rounded bg-white/10 px-1.5 py-1 text-white/70">.env.local</code> before deploying.
+              Tip:<code className="rounded bg-white/10 px-1.5 py-1 text-white/70">Look at the time</code>
             </p>
           </div>
         </section>
