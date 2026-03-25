@@ -9,8 +9,8 @@ type Charge = {
 };
 
 const targetName = process.env.NEXT_PUBLIC_TARGET_NAME?.trim() || 'Most Wanted Cutie';
-const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD?.trim() || '1234';
-const audioFile = process.env.NEXT_PUBLIC_AUDIO_FILE?.trim() || '/music.mp3';
+const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD?.trim() || '247';
+const audioFile = process.env.NEXT_PUBLIC_AUDIO_FILE?.trim() || '/Bruno Mars-Treasure.mp3';
 
 const charges: Charge[] = [
   {
@@ -278,7 +278,7 @@ export default function HomePage() {
                       <div className="relative">
                         <div className="pulse-ring absolute inset-0 rounded-[1.4rem] border border-pink-300/30" />
                         <img
-                          src="/suspect-photo.jpg"
+                          src="/enkule.png"
                           alt={targetName}
                           className="h-56 w-56 rounded-[1.4rem] border border-white/15 bg-white/5 object-cover shadow-inner shadow-white/10"
                           onError={(e) => {
