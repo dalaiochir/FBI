@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #050816;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes sirenPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(20px) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+@keyframes tiltCard {
+  0%,
+  100% {
+    transform: rotate(-1deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(1deg) translateY(-6px);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.45;
+  }
+  70% {
+    transform: scale(1.12);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(0) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(430%) skewX(-18deg);
+  }
+}
+
+@keyframes fadeLift {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+.heart-float {
+  animation-name: floatUp;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.siren-dot {
+  display: inline-block;
+  height: 0.55rem;
+  width: 0.55rem;
+  border-radius: 9999px;
+  animation: sirenPulse 1s ease-in-out infinite;
+}
+
+.siren-dot-delay {
+  animation-delay: 0.45s;
+}
+
+.pulse-ring {
+  animation: pulseRing 2.4s ease-out infinite;
+}
+
+.shine {
+  animation: shine 2.7s linear infinite;
+}
+
+.tilt-card {
+  animation: tiltCard 5.2s ease-in-out infinite;
+}
+
+.fade-up {
+  animation: fadeLift 0.8s ease both;
+}
+
+.fade-up-delayed {
+  animation: fadeLift 0.9s ease 0.15s both;
+}
+
+.charge-card,
+.fade-item {
+  animation: fadeLift 0.85s ease both;
+}
+
+.charge-card {
+  transition: transform 0.45s ease, border-color 0.45s ease, background-color 0.45s ease, box-shadow 0.45s ease;
+}
+
+.charge-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 28px 80px -32px rgba(0, 0, 0, 0.72);
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 0.15rem;
+  animation: blink 1s steps(1, end) infinite;
+}
+
+.verdict-card {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.verdict-card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
