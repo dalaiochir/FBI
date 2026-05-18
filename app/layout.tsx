@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Federal Bureau of Infatuation',
+  title: 'Холбооны дурлалын товчоо',
   description: 'An animated FBI parody date invite site.',
   icons: {
     icon: '/badge.svg',

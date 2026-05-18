@@ -8,7 +8,7 @@ type Charge = {
   emoji: string;
 };
 
-const targetName = process.env.NEXT_PUBLIC_TARGET_NAME?.trim() || 'Хамгийн эрэн сурвалжлагдаж буй өхөөрдөм нэгэн';
+const targetName = process.env.NEXT_PUBLIC_TARGET_NAME?.trim() || 'Эрэн сурвалжлагдаж буй хамгийн өхөөрдөм нэгэн';
 const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD?.trim() || '2:47';
 const audioFile = process.env.NEXT_PUBLIC_AUDIO_FILE?.trim() || '/Bruno Mars-Treasure.mp3';
 
@@ -100,7 +100,7 @@ export default function HomePage() {
     e.preventDefault();
 
     if (passwordInput.trim() !== sitePassword) {
-      setUnlockError('Нууц үг буруу байна. Зөвхөн зөвшөөрөгдсөн өхөөрдөм хүмүүс нэвтэрнэ.');
+      setUnlockError('Нууц үг буруу байна. Зөвхөн зөвшөөрөгдсөн өхөөрдөм нэгэн л нэвтэрнэ.');
       return;
     }
 
@@ -186,7 +186,7 @@ export default function HomePage() {
             </div>
 
             <p className="mt-5 text-xs leading-6 text-white/40">
-              Санамж:<code className="rounded bg-white/10 px-1.5 py-1 text-white/70">Цагийг сайн хараарай</code>
+              Санамж:<code className="rounded bg-white/10 px-1.5 py-1 text-white/70">Илгээсэн цагийг хараарай🫣</code>
             </p>
           </div>
         </section>
