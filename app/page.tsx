@@ -8,36 +8,36 @@ type Charge = {
   emoji: string;
 };
 
-const targetName = process.env.NEXT_PUBLIC_TARGET_NAME?.trim() || 'Most Wanted Cutie';
+const targetName = process.env.NEXT_PUBLIC_TARGET_NAME?.trim() || 'Хамгийн эрэн сурвалжлагдаж буй өхөөрдөм нэгэн';
 const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD?.trim() || '2:47';
 const audioFile = process.env.NEXT_PUBLIC_AUDIO_FILE?.trim() || '/Bruno Mars-Treasure.mp3';
 
 const charges: Charge[] = [
   {
-    title: 'Excessive Cuteness',
-    desc: 'Repeatedly causing dangerous levels of blushing and emotional instability.',
+    title: 'Хэт их өхөөрдөм байдал',
+    desc: 'Аюултай хэмжээнд ичих, догдлох, сэтгэл санаа тогтворгүй болох нөхцөлийг удаа дараа үүсгэсэн.',
     emoji: '💘',
   },
   {
-    title: 'Disturbing My Peace',
-    desc: 'Entering my thoughts without permission and refusing to leave.',
+    title: 'Миний амар тайвныг алдагдуулсан',
+    desc: 'Миний бодол санаанд зөвшөөрөлгүй нэвтэрч, гарахаас татгалзсан.',
     emoji: '🚨',
   },
   {
-    title: 'Making Me Smile for No Reason',
-    desc: 'Suspicious activity involving random grinning at my phone screen.',
+    title: 'Шалтгаангүй инээмсэглүүлсэн',
+    desc: 'Утсаа хараад ганцаараа инээмсэглэх сэжигтэй үйл ажиллагаанд холбогдсон.',
     emoji: '😌',
   },
 ];
 
 const evidence = [
-  'My screen time spikes whenever your messages appear.',
-  'Witnesses confirm I smile at my phone like an idiot.',
-  'You have illegally occupied my brain rent-free.',
-  'I suddenly care about looking cool, which is deeply suspicious.',
+  'Чиний зурвас ирэх бүрд миний дэлгэцийн хэрэглээ огцом нэмэгддэг.',
+  'Гэрчүүд намайг утсаа хараад тэнэг юм шиг инээмсэглэдгийг баталсан.',
+  'Чи миний толгой дотор түрээс төлөхгүйгээр хууль бусаар суурьшсан.',
+  'Би гэнэт дажгүй харагдах гэж хичээдэг болсон нь маш сэжигтэй.',
 ];
 
-const typedText = `After a very serious investigation, ${targetName} has been officially identified as dangerously adorable and directly responsible for my current condition.`;
+const typedText = `Маш нухацтай мөрдөн шалгасны эцэст ${targetName} нь аюултай хэмжээнд өхөөрдөм бөгөөд миний одоогийн байдалд шууд хариуцлагатай этгээдээр албан ёсоор тогтоогдлоо.`;
 
 export default function HomePage() {
   const [typedIndex, setTypedIndex] = useState(0);
@@ -80,7 +80,7 @@ export default function HomePage() {
       setMusicError('');
     } catch {
       setAudioPlaying(false);
-      setMusicError('Tap the music button once — some browsers block autoplay.');
+      setMusicError('Хөгжмийн товч дээр нэг удаа дараарай — зарим браузер автоматаар тоглуулахыг хориглодог.');
     }
   };
 
@@ -100,7 +100,7 @@ export default function HomePage() {
     e.preventDefault();
 
     if (passwordInput.trim() !== sitePassword) {
-      setUnlockError('Wrong password. Authorized cuties only.');
+      setUnlockError('Нууц үг буруу байна. Зөвхөн зөвшөөрөгдсөн өхөөрдөм хүмүүс нэвтэрнэ.');
       return;
     }
 
@@ -142,33 +142,33 @@ export default function HomePage() {
           <div className="w-full max-w-xl rounded-[2rem] border border-white/12 bg-white/8 p-6 shadow-[0_30px_120px_-30px_rgba(0,0,0,0.75)] backdrop-blur-2xl md:p-8">
             <div className="mb-6 flex items-center justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Secure access</p>
-                <h1 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Federal Bureau of Infatuation</h1>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Нууц нэвтрэлт</p>
+                <h1 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Дурлалын Холбооны Товчоо</h1>
               </div>
               <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/70">
                 <span className="siren-dot bg-red-400" />
                 <span className="siren-dot siren-dot-delay bg-blue-400" />
-                classified
+                нууц материал
               </div>
             </div>
 
             <div className="rounded-[1.5rem] border border-white/10 bg-black/25 p-5">
               <p className="text-sm leading-7 text-white/70">
-                This romantic police report is restricted material. Enter the password to open the case file for{' '}
-                <span className="font-semibold text-white">{targetName}</span>.
+                Энэхүү романтик цагдаагийн тайлан нь хязгаарлагдмал нууц материал юм.{' '}
+                <span className="font-semibold text-white">{targetName}</span>-д зориулсан хэргийн файлыг нээхийн тулд нууц үгээ оруулна уу.
               </p>
 
               <form onSubmit={handleUnlock} className="mt-6 space-y-4">
                 <div>
                   <label htmlFor="password" className="mb-2 block text-xs uppercase tracking-[0.28em] text-white/45">
-                    Case file password
+                    Хэргийн файлын нууц үг
                   </label>
                   <input
                     id="password"
                     type="password"
                     value={passwordInput}
                     onChange={(e) => setPasswordInput(e.target.value)}
-                    placeholder="Enter password"
+                    placeholder="Нууц үгээ оруулна уу"
                     className="w-full rounded-2xl border border-white/12 bg-white/7 px-4 py-4 text-base text-white outline-none ring-0 transition placeholder:text-white/30 focus:border-pink-300/45"
                   />
                 </div>
@@ -178,7 +178,7 @@ export default function HomePage() {
                   className="group relative w-full overflow-hidden rounded-2xl border border-pink-300/20 bg-gradient-to-r from-red-500 to-pink-500 px-6 py-4 text-sm font-bold uppercase tracking-[0.28em] text-white shadow-[0_20px_80px_-20px_rgba(236,72,153,0.75)] transition duration-300 hover:scale-[1.02]"
                 >
                   <span className="shine absolute inset-y-0 left-[-35%] w-1/3 bg-white/25" />
-                  <span className="relative">Unlock case file</span>
+                  <span className="relative">Хэргийн файлыг нээх</span>
                 </button>
 
                 {unlockError ? <p className="text-sm text-pink-200">{unlockError}</p> : null}
@@ -186,7 +186,7 @@ export default function HomePage() {
             </div>
 
             <p className="mt-5 text-xs leading-6 text-white/40">
-              Tip:<code className="rounded bg-white/10 px-1.5 py-1 text-white/70">Look at the time</code>
+              Санамж:<code className="rounded bg-white/10 px-1.5 py-1 text-white/70">Цагийг сайн хараарай</code>
             </p>
           </div>
         </section>
@@ -199,8 +199,8 @@ export default function HomePage() {
                 <span className="text-xl">🚔</span>
               </div>
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-white/50">Heart Crimes Division</p>
-                <h2 className="text-sm font-semibold text-white/90">Federal Bureau of Infatuation</h2>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/50">Зүрхний гэмт хэргийн хэлтэс</p>
+                <h2 className="text-sm font-semibold text-white/90">Дурлалын Холбооны Товчоо</h2>
               </div>
             </div>
 
@@ -209,10 +209,10 @@ export default function HomePage() {
                 onClick={() => void toggleMusic()}
                 className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm text-white/85 backdrop-blur-md transition hover:border-white/25 hover:bg-white/10"
               >
-                {audioPlaying ? 'Pause music ♫' : audioReady ? 'Play music ♫' : 'Music loading…'}
+                {audioPlaying ? 'Хөгжмийг зогсоох ♫' : audioReady ? 'Хөгжим тоглуулах ♫' : 'Хөгжим ачаалж байна…'}
               </button>
               <span className="rounded-full border border-red-400/25 bg-red-500/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-red-200">
-                Active case: {targetName}
+                Идэвхтэй хэрэг: {targetName}
               </span>
             </div>
           </header>
@@ -221,13 +221,13 @@ export default function HomePage() {
             <div className="fade-up">
               <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/75 backdrop-blur-md">
                 <span className="siren-dot bg-red-400" />
-                Official notice from the romance police
+                Романтик цагдаагаас ирүүлсэн албан мэдэгдэл
               </div>
 
               <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
-                You are under arrest
+                Чи баривчлагдлаа
                 <span className="mt-2 block bg-gradient-to-r from-red-300 via-pink-200 to-blue-200 bg-clip-text text-transparent">
-                  for stealing my heart.
+                  миний зүрхийг хулгайлсан хэргээр.
                 </span>
               </h1>
 
@@ -244,13 +244,13 @@ export default function HomePage() {
                   className="group relative overflow-hidden rounded-2xl border border-red-300/25 bg-gradient-to-r from-red-500 to-pink-500 px-7 py-4 text-center text-sm font-semibold uppercase tracking-[0.25em] text-white shadow-[0_20px_80px_-20px_rgba(239,68,68,0.7)] transition-transform duration-300 hover:scale-[1.03]"
                 >
                   <span className="shine absolute inset-y-0 left-[-35%] w-1/3 bg-white/25" />
-                  <span className="relative">Review sentence</span>
+                  <span className="relative">Шийтгэлийг харах</span>
                 </a>
                 <a
                   href="#charges"
                   className="rounded-2xl border border-white/15 bg-white/5 px-7 py-4 text-center text-sm font-semibold uppercase tracking-[0.25em] text-white/85 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
                 >
-                  See the charges
+                  Яллах үндэслэлүүдийг харах
                 </a>
               </div>
             </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-xl">
                   <div className="mb-4 flex items-center justify-between">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.35em] text-red-200/80">Suspect profile</p>
+                      <p className="text-xs uppercase tracking-[0.35em] text-red-200/80">Сэжигтний мэдээлэл</p>
                       <p className="mt-1 text-xl font-bold">{targetName}</p>
                     </div>
                     <div className="flex gap-2">
@@ -287,17 +287,17 @@ export default function HomePage() {
                         />
                       </div>
 
-                      <p className="mt-5 text-xs uppercase tracking-[0.38em] text-white/45">Mugshot evidence</p>
-                      <h3 className="mt-2 text-3xl font-black tracking-tight">Extremely suspicious</h3>
+                      <p className="mt-5 text-xs uppercase tracking-[0.38em] text-white/45">Фото нотлох баримт</p>
+                      <h3 className="mt-2 text-3xl font-black tracking-tight">Маш сэжигтэй</h3>
                       <p className="mt-2 max-w-sm text-sm leading-6 text-white/60">
-                        Wanted for emotional theft, chaos-level charm, and repeated disruption of my ability to act normal.
+                        Сэтгэл хулгайлсан, дэндүү дур булаам байсан, мөн намайг хэвийн байж чадахгүй болтол удаа дараа үймүүлсэн хэрэгт эрэн сурвалжлагдаж байна.
                       </p>
 
                       <div className="mt-5 grid w-full grid-cols-3 gap-3 text-left">
                         {[
-                          ['Alias', 'Heart thief'],
-                          ['Threat', 'Too cute'],
-                          ['Bail', 'One date'],
+                          ['Хоч', 'Зүрхний хулгайч'],
+                          ['Аюулын түвшин', 'Дэндүү өхөөрдөм'],
+                          ['Барьцаа', 'Нэг болзоо'],
                         ].map(([label, value]) => (
                           <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-3">
                             <p className="text-[10px] uppercase tracking-[0.28em] text-white/35">{label}</p>
@@ -315,11 +315,11 @@ export default function HomePage() {
           <section id="charges" className="mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-12">
             <div className="mb-8 flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Official Report</p>
-                <h3 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">List of charges</h3>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/45">Албан тайлан</p>
+                <h3 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Яллах үндэслэлүүдийн жагсаалт</h3>
               </div>
               <div className="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/65 backdrop-blur-md md:block">
-                Zero chance of acquittal
+                Цагаатгагдах ямар ч боломжгүй
               </div>
             </div>
 
@@ -338,7 +338,7 @@ export default function HomePage() {
                   <p className="mt-3 leading-7 text-white/65">{charge.desc}</p>
                   <div className="mt-6 flex items-center gap-2 text-sm text-red-200/85">
                     <span className="h-2 w-2 rounded-full bg-red-300" />
-                    Confirmed by the heart department
+                    Зүрхний хэлтсээс баталгаажуулав
                   </div>
                 </article>
               ))}
@@ -347,8 +347,8 @@ export default function HomePage() {
 
           <section className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:px-10 md:py-12 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur-md md:p-8">
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Collected Evidence</p>
-              <h3 className="mt-2 text-3xl font-black tracking-tight">This case is airtight</h3>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Цуглуулсан нотлох баримтууд</p>
+              <h3 className="mt-2 text-3xl font-black tracking-tight">Энэ хэрэг бүрэн нотлогдсон</h3>
               <div className="mt-6 space-y-4">
                 {evidence.map((item, idx) => (
                   <div key={item} className="fade-item flex items-start gap-4 rounded-2xl border border-white/10 bg-black/20 p-4" style={{ animationDelay: `${idx * 120}ms` }}>
@@ -365,11 +365,11 @@ export default function HomePage() {
               <div className="absolute -left-12 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-red-500/20 blur-3xl" />
               <div className="absolute -right-10 top-8 h-36 w-36 rounded-full bg-blue-500/20 blur-3xl" />
 
-              <p className="relative text-xs uppercase tracking-[0.35em] text-red-100/75">Final sentence</p>
-              <h3 className="relative mt-2 text-3xl font-black tracking-tight md:text-4xl">The court has reached a verdict.</h3>
+              <p className="relative text-xs uppercase tracking-[0.35em] text-red-100/75">Эцсийн шийтгэл</p>
+              <h3 className="relative mt-2 text-3xl font-black tracking-tight md:text-4xl">Шүүх шийдвэрээ гаргалаа.</h3>
               <p className="relative mt-4 max-w-xl text-lg leading-8 text-white/75">
-                In light of overwhelming evidence, {targetName} is hereby sentenced to one official date, unlimited cute behavior,
-                and continued disruption of my emotional stability.
+                Нотлох баримтууд хангалттай байгаа тул {targetName} нь нэг албан ёсны болзоо, хязгааргүй өхөөрдөм үйлдэл,
+                мөн миний сэтгэл санааны тогтвортой байдлыг үргэлжлүүлэн алдагдуулах шийтгэл хүлээнэ.
               </p>
 
               <div className="relative mt-8 grid gap-4 sm:grid-cols-2">
@@ -378,19 +378,19 @@ export default function HomePage() {
                   className="group relative overflow-hidden rounded-2xl border border-red-300/20 bg-gradient-to-r from-red-500 to-pink-500 px-6 py-4 text-sm font-bold uppercase tracking-[0.25em] text-white shadow-[0_20px_70px_-20px_rgba(236,72,153,0.75)] transition-all duration-300 hover:scale-[1.03]"
                 >
                   <span className="shine absolute inset-y-0 left-[-35%] w-1/3 bg-white/25" />
-                  <span className="relative">Accept sentence</span>
+                  <span className="relative">Шийтгэлийг зөвшөөрөх</span>
                 </button>
                 <button
                   onClick={() => setRevealed(true)}
                   className="rounded-2xl border border-white/15 bg-white/5 px-6 py-4 text-sm font-bold uppercase tracking-[0.25em] text-white/85 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
                 >
-                  No objections
+                  Эсэргүүцэл байхгүй
                 </button>
               </div>
 
               <div className={`verdict-card relative mt-6 rounded-[1.6rem] border border-pink-300/20 bg-black/25 p-5 text-center text-lg font-semibold text-pink-100 ${revealed ? 'verdict-card-visible' : ''}`}>
-                Sentence accepted. Your punishment is...
-                <span className="mt-2 block text-3xl font-black tracking-tight text-white md:text-4xl">Go on a date with me. 💐</span>
+                Шийтгэлийг хүлээн авлаа. Чиний шийтгэл бол...
+                <span className="mt-2 block text-3xl font-black tracking-tight text-white md:text-4xl">Надтай болзоонд явах. 💐</span>
               </div>
             </div>
           </section>
